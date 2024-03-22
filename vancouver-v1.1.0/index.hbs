@@ -5,7 +5,7 @@
 
 <div class="cover-container">
     {{#match @custom.hero_section_options "Post" }}
-	        {{#get "posts" filter="tag:homefeature" limit="1"}}
+	        {{#get "posts" filter="tag:hash-homefeature" limit="1"}}
             {{#foreach posts}}
                 <article class="cover-wrapper {{post_class}} {{#if @custom.cover_horizontal}}cover-horizontal{{/if}}" style="background-color: {{primary_tag.accent_color}};" data-month="{{date format="MMMM YYYY"}}">
                     <div class="cover-content">
@@ -17,9 +17,8 @@
                                     <div class="cover-feed-excerpt truncate-text line-3">{{excerpt words="20"}}</div>
                                 {{/if}}
                                 <div class="read-more">
-                                    <div class="feed-count">Issue. {{../pagination.total}} </div>
+                                    <div class="feed-count">Read more</div>
                                     <div class="line-horizontal"></div>
-                                    <div class="feed-read-more">Read more</div>
                                 </div>
                             </div>
                         </div>
