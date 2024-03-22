@@ -1,0 +1,13 @@
+{{!< default}}
+<main class="site-main">
+    {{#post}}
+        <article class="single {{^match @page.show_title_and_feature_image}}reset-page-padding{{/match}}">
+            
+            {{> "page-header"}}
+
+            <div class="single-content gh-content kg-canvas">
+                {{content}}
+            </div>
+        </article>
+    {{/post}}
+</main>

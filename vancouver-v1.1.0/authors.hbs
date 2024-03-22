@@ -1,0 +1,63 @@
+{{!< default}}
+<div class="content-area">
+    <main class="site-main">
+        {{#page}} 
+            {{> "page-header"}}
+        {{/page}}
+
+        <section class="container">
+            {{#get "authors" limit="12" include="count.posts" order="count.posts desc"}}
+                <div class="kg-grid authors kg-grid-4col">
+                    {{#foreach authors from="1" to="4"}}
+                        <div class="author-card">
+                            {{#if profile_image}}
+                                <div class="u-placeholder author-card-avatar vertical">
+                                    <img class="u-object-fit" 
+                                        srcset="{{img_url profile_image size="s" format="webp"}} 400w,
+                                                {{img_url profile_image size="m" format="webp"}} 750w"
+                                        sizes="(min-width: 992px) 300px, 240px"
+                                        src="{{img_url profile_image size="m"}}" 
+                                        alt="{{name}}">
+                                </div>
+                            {{else}}
+                                <div class="u-placeholder square"></div>
+                            {{/if}}
+                            <div class="author-text">
+                                <h3 class="author-card-title">{{name}}</h3>
+                                <p class="author-post-number">{{plural count.posts empty=(t 'No articles') singular=(t '1 article') plural=(t '% articles')}}</p>
+                                <div class="author-card-bio">{{bio}}</div>
+                            </div>
+                            <a class="u-permalink" href={{url}} aria-label="{{name}}"></a>
+                        </div>
+                    {{/foreach}}
+                </div>
+                <h2 class="authors-title-secondary">Meet more authors</h2>
+                <div class="kg-grid authors-small kg-grid-8col">
+                    {{#foreach authors from="5" to="12"}}
+                        <div class="author-card">
+                            {{#if profile_image}}
+                                <div class="u-placeholder author-card-avatar vertical">
+                                    <img class="u-object-fit" 
+                                        srcset="{{img_url profile_image size="xs" format="webp"}} 150w,
+                                                {{img_url profile_image size="s" format="webp"}} 400w"
+                                        sizes="150px"
+                                        src="{{img_url profile_image size="s"}}" 
+                                        alt="{{name}}">
+                                </div>
+                            {{else}}
+                                <div class="u-placeholder vertical"></div>
+                            {{/if}}
+                            <div class="author-text">
+                                <h3 class="author-card-title">{{name}}</h3>
+                                <p class="author-post-number">{{plural count.posts empty=(t 'No articles') singular=(t '1 article') plural=(t '% articles')}}</p>
+                            </div>
+                            <a class="u-permalink" href={{url}} aria-label="{{name}}"></a>
+                        </div>
+                    {{/foreach}}
+                </div>
+            {{/get}}
+        </section>
+    </main>
+</div>
+
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}

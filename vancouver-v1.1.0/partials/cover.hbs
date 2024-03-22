@@ -1,0 +1,58 @@
+<div class="cover-wrapper cover-static {{post_class}}{{#match @custom.cover_style "Horizontal"}} cover-horizontal{{/match}}{{#match @custom.cover_style "Vertical"}} cover-vertical{{/match}}{{#match @custom.cover_style "Vertical Overlay"}} cover-vertical-overlay{{/match}}" style="background-color: {{primary_tag.accent_color}};" data-month="{{date format="MMMM YYYY"}}">
+    <div class="cover-content">
+        <div class="cover-text">
+            <h2 class="cover-feed-title">
+                {{#if @custom.cover_title }}
+                    {{{@custom.cover_title}}}
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </h2>
+            <div class="cover-feed-desc">
+                <h2 class="cover-feed-title-mobile">
+                    {{#if @custom.cover_title }}
+                        {{{@custom.cover_title}}}
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </h2>
+                <div class="cover-feed-excerpt truncate-text line-3">
+                    {{#if @custom.cover_description }}
+                        {{{@custom.cover_description}}}
+                    {{else}}
+                        {{{@site.description}}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{#if @custom.cover_photo }}
+            <figure class="feed-featured-image">
+                <img
+                    srcset="{{img_url @custom.cover_photo size="l" format="webp"}} 960w,
+                            {{img_url @custom.cover_photo size="xl" format="webp"}} 1140w,
+                            {{img_url @custom.cover_photo size="xxl" format="webp"}} 1920w"
+                    sizes="{{#match @custom.cover_style "Vertical"}}50vw{{else}}100vw{{/match}}"
+                    src="{{img_url @custom.cover_photo size="xxl"}}"
+                    alt="{{@site.title}}"
+                    loading="lazy"
+                    class="u-object-fit"
+                >
+            </figure>
+        {{else}}
+            {{#if @site.cover_image}}
+                <figure class="feed-featured-image">
+                    <img
+                        srcset="{{img_url @site.cover_image size="l" format="webp"}} 960w,
+                                {{img_url @site.cover_image size="xl" format="webp"}} 1140w,
+                                {{img_url @site.cover_image size="xxl" format="webp"}} 1920w"
+                        sizes="100vw"
+                        src="{{img_url @site.cover_image size="xxl"}}"
+                        alt="{{@site.title}}"
+                        loading="lazy"
+                        class="u-object-fit"
+                    >
+                </figure>
+            {{/if}}
+        {{/if}}
+    </div>
+</div>

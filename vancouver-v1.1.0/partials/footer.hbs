@@ -1,0 +1,49 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="logo">
+                {{#if @site.logo}}
+                    <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+                {{else}}
+                    <span class="logo-text">{{@site.title}}</span>
+                {{/if}}
+            </div>
+        </div>
+        <div class="footer-inner-main">
+            <div class="footer-left">
+                {{navigation type="secondary"}}
+                <div class="nav social">
+                    {{#if @site.facebook}}
+                        <li>
+                            <a class="social-item social-item-facebook"
+                                href="{{facebook_url @site.facebook}}" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook">
+                                Facebook
+                            </a>
+                        </li>
+                    {{/if}}
+                    {{#if @site.twitter}}
+                        <li>
+                            <a class="social-item social-item-twitter"
+                                href="{{twitter_url @site.twitter}}" target="_blank"
+                                rel="noopener noreferrer" aria-label="Twitter">
+                                Twitter
+                            </a>
+                        </li>
+                    {{/if}}
+                </div>
+            </div>
+            <nav class="footer-right">
+                <div class="footer-desc">
+                    {{@site.description}}
+                </div>
+            </nav>
+        </div>
+        <div class="footer-copyright">
+            {{@site.title}} © {{date format="YYYY"}}. 
+            {{t 'Published with'}}
+            <a class="menu-item badge" href="https://ghost.org/" target="_blank" rel="noopener noreferrer"> Ghost</a>
+            & <a class="menu-item badge" href="https://themex.studio/vancouver/" target="_blank" rel="noopener noreferrer">Vancouver</a>
+        </div>
+    </div>
+</footer>

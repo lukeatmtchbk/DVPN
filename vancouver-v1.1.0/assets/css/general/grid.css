@@ -1,0 +1,22 @@
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 6vw;
+    padding-left: 6vw;
+    max-width: 1920px;
+    width: 100%;
+}
+
+.container-full {
+    padding-right: 6vw;
+    padding-left: 6vw;
+    width: 100%;
+}
+
+.container.medium {
+    max-width: calc(750px + 10vw);
+}
+
+.container.small {
+    max-width: calc(720px + 10vw);
+}

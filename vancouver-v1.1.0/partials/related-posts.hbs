@@ -1,0 +1,12 @@
+{{#get "posts" include="tags" limit="6" filter="tags:[{{post.tags}}]+id:-{{post.id}}" as |related|}}
+    {{#if related}}
+        <section class="related-wrapper kg-canvas">
+            {{> "feed-title" title="You might also like"}}
+            <div class="kg-grid kg-grid-3col multi-row-grid">
+                {{#foreach related}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            </div>
+        </section>
+    {{/if}}
+{{/get}}

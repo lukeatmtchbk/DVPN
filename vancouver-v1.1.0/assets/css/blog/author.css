@@ -1,0 +1,118 @@
+.author-meta {
+    margin-top: 0.5rem;
+    color: var(--secondary-text-color);
+    font-size: 2rem;
+    letter-spacing: 0.02rem;
+    text-align: left;
+    width: 100%;
+    text-align: center;
+}
+
+.author-social {
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.author-list {
+    display: flex;
+    align-items: center;
+    margin: 16px 0 0 8px;
+}
+
+.author-list .author-name {
+    margin: 0 0 0 16px; 
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--dark-gray-color);
+    text-align: left;
+}
+
+.author-list .author-name a {
+    color: var(--dark-gray-color);
+}
+
+.author-list .author-image-placeholder {
+    flex-shrink: 0;
+    overflow: hidden;
+    margin-left: -8px;
+    width: 28px;
+    border: 2px solid var(--white-color);
+    border-radius: 50%;
+}
+
+.author-card {
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.author-card-avatar {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.author-text {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.author-card-title {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: clamp(2.4rem, 2.3vw, 2.8rem);
+}
+
+.authors-small .author-card-title {
+    margin-top: 1.6rem;
+    font-size: 1.8rem;
+}
+
+.author-post-number {
+    text-align: center;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.authors-small .author-post-number {
+    font-size: 1.6rem;
+}
+
+.authors-title-secondary {
+    font-size: clamp(2rem, 2.2vw, 2.4rem);
+    margin: 8rem 0 4rem 0;
+}
+
+.authors-small .author-text {
+    gap: 8px;
+}
+
+.author-card-bio {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--secondary-text-color);
+}
+
+.has-serif-title .author-card-title,
+.has-serif-title .authors-title-secondary,
+.has-serif-body .author-post-number,
+.has-serif-body .author-meta,
+.has-serif-body .author-card-bio {
+    font-family: var(--font-serif);
+}
+
+.has-serif-title .author-card-title,
+.has-serif-title .authors-title-secondary {
+    font-weight: 400;
+    font-style: italic;
+}
+
+@media (max-width: 575px) {
+    .author-card-bio {
+        display: none;
+    }
+
+    .author-card-title {
+        margin-top: 2rem;
+    }
+}

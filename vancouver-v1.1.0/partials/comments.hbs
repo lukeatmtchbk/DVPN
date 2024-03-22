@@ -1,0 +1,9 @@
+{{#if comments}}
+    <section class="gh-comments kg-canvas">
+        <header class="gh-comments-header">
+            <h2 class="gh-comments-title related-title feed-header-title">Member discussion</h3>
+            {{comment_count class="gh-comments-count"}}
+        </header>
+        {{comments title="" count=false}}
+    </section>
+{{/if}}

@@ -1,0 +1,33 @@
+{{!< default}}
+<div class="content-area">
+    <main class="site-main">
+
+        {{#page}}
+            <section class="taxonomy container">
+                <header class="page-header">
+                    <div class="header-wrapper">
+                        <h1 class="single-title">
+                            All
+                            {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                        </h1>
+                        {{#if custom_excerpt}}
+                            <div class="single-excerpt">{{custom_excerpt}}</div>
+                        {{/if}}
+                    </div>
+                </header>
+            </section>
+        {{/page}}
+
+        <section class="container">
+            <div class="kg-grid kg-grid-5col multi-row-grid gh-feed">
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            </div>
+            {{pagination}}
+        </section>
+
+    </main>
+</div>
+
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}

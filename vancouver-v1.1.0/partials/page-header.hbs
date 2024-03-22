@@ -1,0 +1,27 @@
+{{#match @page.show_title_and_feature_image}}
+    <section class="taxonomy container">
+        <header class="page-header {{#if feature_image}}with-feature-image{{/if}}">
+            <div class="header-wrapper {{#unless feature_image}}header-full{{/unless}}">
+                <h1 class="single-title">
+                    {{title}}
+                </h1>
+                {{#if custom_excerpt}}
+                    <div class="single-excerpt">{{{custom_excerpt}}}</div>
+                {{/if}}
+            </div>
+
+            {{#if feature_image}}
+                <div class="media-wrapper">
+                    <img 
+                        class="" 
+                        srcset="{{img_url feature_image size="s" format="webp"}} 400w,
+                            {{img_url feature_image size="m" format="webp"}} 750w,"
+                            sizes="(min-width: 992px) 600px, 90vw"
+                            src="{{img_url feature_image size="m"}}"
+                        alt="{{title}}
+                        ">
+                </div>
+            {{/if}}
+        </header>
+    </section>
+ {{/match}}

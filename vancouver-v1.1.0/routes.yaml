@@ -1,0 +1,19 @@
+routes:
+  /archive/:
+    template: archive
+    controller: channel
+    data: page.archive
+    order: published_at desc
+  /authors/:
+    template: authors
+    data: page.authors
+  /tags/:
+    template: tags
+    data: page.tags
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

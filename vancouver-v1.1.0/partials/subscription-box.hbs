@@ -1,0 +1,15 @@
+{{#unless @member}}
+    <form class="form-wrapper cover-form inline-form" data-members-form>
+        <input class="auth-email" type="email" data-members-email placeholder="Your email..." required="true" autocomplete="false">
+        
+        {{!-- {{#if @custom.email_signup_small}}
+            <div class="cover-description-smalltext">{{@custom.email_signup_small}}</div>
+        {{/if}} --}}
+
+        <button class="button {{#unless neutralButton}}button-primary{{/unless}} form-button" type="submit" aria-label="Submit">
+            <span class="default">Subscribe</span>
+            <span class="loader">{{> icons/loader}}</span>
+            <span class="success">Email sent</span>
+        </button>
+    </form>
+{{/unless}}

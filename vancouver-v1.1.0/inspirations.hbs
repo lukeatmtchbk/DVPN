@@ -1,0 +1,30 @@
+{{!< default}}
+<div class="content-area">
+    <main class="site-main">
+
+        {{#page}}
+            <section class="taxonomy container">
+                <header class="single-header">
+                    <div class="header-wrapper">
+                        <h1 class="single-title">
+                             {{title}}
+                        </h1>
+                        {{#if custom_excerpt}}
+                            <div class="single-excerpt">{{{custom_excerpt}}}</div>
+                        {{/if}}
+                    </div>
+                </header>
+            </section>
+        {{/page}}
+        <div class="container-full">
+            <div class="kg-grid kg-grid-5col gh-feed">
+                {{#foreach posts}}
+                    {{> "post-image"}}
+                {{/foreach}}
+            </div>
+            {{pagination}}
+        </div>
+    </main>
+</div>
+
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}

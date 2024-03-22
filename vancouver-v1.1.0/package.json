@@ -1,0 +1,159 @@
+{
+    "name": "vancouver",
+    "description": "Minimal magazine",
+    "version": "1.1.0",
+    "private": true,
+    "engines": {
+        "ghost": ">=5.0.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Themex Studio",
+        "email": "trong@themex.studio",
+        "url": "https://themex.studio"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "docs": "https://vancouver.themex.studio/docs/vancouver-docs",
+    "config": {
+        "posts_per_page": 20,
+        "image_sizes": {
+            "xs": {
+                "width": 150
+            },
+            "s": {
+                "width": 400
+            },
+            "m": {
+                "width": 750
+            },
+            "l": {
+                "width": 960
+            },
+            "xl": {
+                "width": 1140
+            },
+            "xxl": {
+                "width": 1920
+            }
+        },
+        "card_assets": true,
+        "custom": {
+            "title_font": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
+                "default": "Modern sans-serif"
+            },
+            "body_font": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
+                "default": "Modern sans-serif"
+            },
+            "navigation_layout": {
+                "type": "select",
+                "options": ["Logo on the left", "Logo in the middle"],
+                "default": "Logo on the left"
+            },
+            "transparent_header": {
+                "type": "boolean",
+                "default": false,
+                "description": "Hide & Show header background color"
+            },
+            "background_color": {
+                "type": "color",
+                "default": "#ffffff"
+            },
+            "hero_section_options": {
+                "type": "select",
+                "options": ["Post", "Cover"],
+                "default": "Post",
+                "group": "homepage",
+                "description": "Showing latest post or cover image in the hero section"
+            },
+            "cover_horizontal": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage",
+                "visibility": "hero_section_options:Post"
+            },
+            "cover_style": {
+                "type": "select",
+                "options": ["Vertical", "Vertical Overlay", "Horizontal"],
+                "default": "Horizontal",
+                "group": "homepage",
+                "visibility": "hero_section_options:Cover"
+            },
+            "cover_photo": {
+                "type": "image",
+                "group": "homepage",
+                "description": "Min 1280px width",
+                "visibility": "hero_section_options:Cover"
+            },
+            "cover_title": {
+                "type": "text",
+                "group": "homepage",
+                "visibility": "hero_section_options:Cover"
+            },
+            "cover_description": {
+                "type": "text",
+                "group": "homepage",
+                "visibility": "hero_section_options:Cover"
+            },
+            "enter_tag_slugs_for_homepage_sections": {
+                "type": "text",
+                "group": "homepage",
+                "description": "Example: design,form,style"
+            },
+            "latest_post_title": {
+                "type": "text",
+                "default": "Latest stories",
+                "group": "homepage"
+            },
+            "enter_tag_slug_for_newsletter_section": {
+                "type": "text",
+                "group": "homepage",
+                "description": "Latest post of this tag will show in the newsletter section on the homepage"
+            },
+            "email_signup_text": {
+                "type": "text",
+                "default": "Join the club",
+                "group": "homepage"
+            },
+            "email_signup_desc": {
+                "type": "text",
+                "default": "Like these stories? You will (probably) love our monthly newsletter.",
+                "group": "homepage"
+            }
+        }
+    },
+    "scripts": {
+        "dev": "gulp",
+        "test": "gscan .",
+        "zip": "gulp zip"
+    },
+    "devDependencies": {
+        "@tryghost/shared-theme-assets": "2.3.2",
+        "autoprefixer": "10.4.14",
+        "beeper": "2.1.0",
+        "cssnano": "6.0.1",
+        "gscan": "4.37.1",
+        "gulp": "4.0.2",
+        "gulp-concat": "2.6.1",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "9.0.1",
+        "gulp-uglify": "3.0.2",
+        "gulp-zip": "5.1.0",
+        "postcss": "8.4.25",
+        "postcss-easy-import": "4.0.0",
+        "pump": "3.0.0"
+    }
+}

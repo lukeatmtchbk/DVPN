@@ -1,0 +1,123 @@
+label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--darker-gray-color);
+    margin-top: 3.2rem;
+    margin-bottom: .8rem;
+}
+
+label + label {
+    margin-top: 2rem;
+}
+
+label input,
+label textarea {
+    margin-top: 0.7rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    height: var(--form-input-height);
+    padding: 0 2rem;
+    font-size: 1.8rem;
+    color: var(--darker-gray-color);
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid var(--primary-text-color);
+    border-radius: 6px;
+    outline: none;
+}
+
+input {
+    border-radius: var(--form-border-radius-rounded);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary-text-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+   color: var(--dark-gray-color);
+}
+
+textarea {
+    height: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    resize: vertical;
+    line-height: 1.5;
+    border-radius: 26px;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin-bottom: 2.4rem;
+}
+
+.form-wrapper {
+    position: relative;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr auto;
+}
+
+.form-button {
+    color: var(--background-color);
+    background-color: var(--primary-text-color);
+
+}
+
+.form-button.with-icon {
+    width: 40px;
+    padding: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.form-wrapper .loader,
+.form-wrapper .success {
+    display: none;
+}
+
+.form-wrapper .loader .icon {
+    width: 28px;
+    height: 28px;
+}
+
+.form-wrapper.loading .default,
+.form-wrapper.success .default,
+.form-wrapper.success .loader {
+    display: none;
+}
+
+.form-wrapper.loading .loader {
+    display: block;
+}
+
+.form-wrapper.success .success {
+    display: flex;
+    align-items: center;
+}
+
+.contact-form {
+    margin-top: 3rem;
+}
+
+.contact-form .button {
+    margin-top: 1.5rem;
+}
+
+.has-serif-body input,
+.has-serif-body textarea {
+    font-family: var(--font-serif);
+}
+
+@media (max-width: 989px) {
+    .form-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,26 @@
+{{!< default}}
+<div class="content-area">
+    <main class="site-main">
+
+        {{#page}} 
+            {{> "page-header"}}
+        {{/page}}
+
+        {{#get "tags" limit="8" include="count.posts" order="count.posts desc"}}
+            {{#foreach tags}}
+                <section class="container">
+                    {{> "feed-title" title=name view_all=true}}
+                    <div class="kg-grid kg-grid-5col single-row-grid">
+                        {{#get "posts" include="tags" filter="tag:{{slug}}" limit="5" order="featured desc,published_at desc"}}
+                            {{#foreach posts}}
+                                {{> "post-card"}}
+                            {{/foreach}}
+                        {{/get}}
+                    </div>
+                </section>
+            {{/foreach}}
+        {{/get}}
+    </main>
+</div>
+
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}

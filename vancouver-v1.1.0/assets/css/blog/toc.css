@@ -1,0 +1,89 @@
+.kg-canvas .toc-container {
+    font-size: 1.4rem;
+    padding: 2rem 3rem;
+    width: 100%;
+    background-color: var(--hero-background-color);
+}
+
+.radius-rounded .toc-container {
+    border-radius: var(--border-radius);
+}
+
+.toc-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.has-serif-title .toc-sidebar {
+    font-family: var(--font-serif);
+}
+
+.toc-sidebar h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    font-variant: petite-caps;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.has-serif-title .toc-sidebar h4 {
+    font-family: var(--font-serif);
+}
+
+.toc {
+    align-self: stretch;
+    overflow-y: scroll;
+    padding: 1px 0 0;
+}
+
+.toc > .toc-list {
+    padding-left: 0;
+}
+
+.toc-list {
+    list-style-type: none;
+}
+
+.toc-list-item {
+    font-size: 1.7rem;
+    padding: 10px 0;
+    line-height: 1.2;
+}
+
+.gh-content ol ol li.toc-list-item {
+    list-style-type: none;
+}
+
+
+.gh-content li+li {
+    margin-top: 0;
+}
+
+.toc-list-item.is-active-li a {
+    font-weight: 700;
+}
+
+.toc-list-item a {
+    color: var(--dark-gray-color);
+}
+
+@media (max-width: 1190px) {
+
+    .kg-canvas .toc-container {
+        grid-column: main-start/main-end;
+        margin: 0 0 2vmin;
+        padding: 0;
+        position: static;
+    }
+
+    .kg-canvas .toc-sidebar {
+        background-color: var( --hero-background-color);
+        overflow-y: scroll;
+        padding: 3rem 3rem 1rem;
+        width: 100%;
+    }
+
+    .toc-list-item {
+        font-size: 1.8rem;
+    }
+}

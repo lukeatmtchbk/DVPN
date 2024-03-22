@@ -1,0 +1,41 @@
+{{{html}}}
+
+<section class="single-cta-wrapper">
+    <div class="gradient-mask"></div>
+    <div class="single-cta">
+        {{#has visibility="paid"}}
+            <div class="single-cta-title">{{t 'This post is for paying subscribers only' }}</div>
+            <p class="single-cta-desc">{{t 'Subscribe to continue reading' }}</p>
+        {{/has}}
+        {{#has visibility="members"}}
+            <div class="single-cta-title">{{t 'This post is for subscribers only' }}</div>
+            <p class="single-cta-desc">{{t 'Subscribe to continue reading' }}</p>
+        {{/has}}
+        {{#has visibility="tiers"}}
+            <div class="single-cta-title">{{t 'This post is for subscribers on the {tiers} only' tiers=tiers}}</div>
+            <p class="single-cta-desc">{{t 'Subscribe to continue reading' }}</p>
+            
+        {{/has}}
+        {{#if @member}}
+            <button class="button  button-primary" data-portal="account/plans">{{t 'Upgrade now'}}</button>
+        {{else}}
+            {{!-- <button class="button  button-primary" data-portal="signup">Subscribe now</button> --}}
+            {{> subscription-box}}
+            <button class="button-text single-cta-footer" data-portal="signin">{{t 'Already have an account?'}} <strong>{{t 'Sign in'}}</strong></button>
+        {{/if}}
+    </div>
+
+    {{#get "posts" filter="visibility:members,visibility:paid" limit="6" include="tags" as |related|}}
+        {{#if related}}
+            <div class="related-paid-posts">
+                <h4 class="single-cta-title">{{t '...and more stories' }}</h4>
+                <div class="kg-grid kg-grid-3col multi-row-grid">
+                    {{#foreach related}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                </div>
+            </div>
+        {{/if}}
+    {{/get}}
+    
+</section>
